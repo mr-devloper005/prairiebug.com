@@ -1,36 +1,38 @@
 import { slot4BrandConfig } from '@/editable/theme/brand.config'
 
+export const uiHiddenTaskKeys = ['profile'] as const
+export const isUiHiddenTask = (key: string) => (uiHiddenTaskKeys as readonly string[]).includes(key)
+
 export const globalContent = {
   site: {
     name: slot4BrandConfig.siteName,
-    tagline: slot4BrandConfig.tagline || 'Independent reading platform',
+    tagline: slot4BrandConfig.tagline || 'Curated resources and collections',
     domain: slot4BrandConfig.domain,
     baseUrl: slot4BrandConfig.baseUrl,
   },
   nav: {
-    tagline: 'Independent reading platform',
+    tagline: 'Curated resources and collections',
     primaryLinks: [
-      { label: 'Articles', href: '/articles' },
-      { label: 'Visuals', href: '/image-sharing' },
-      { label: 'Listings', href: '/listings' },
+      { label: 'About', href: '/about' },
       { label: 'Contact', href: '/contact' },
     ],
     actions: {
-      primary: { label: 'Start exploring', href: '/' },
-      secondary: { label: 'Submit', href: '/contact' },
+      primary: { label: 'Browse the library', href: '/sbm' },
+      secondary: { label: 'Contact', href: '/contact' },
     },
   },
   footer: {
-    tagline: 'Stories, resources, and discoverable posts',
-    description: 'A connected publishing surface for articles, visuals, listings, profiles, bookmarks, and downloadable resources.',
+    tagline: 'Curated resources and collections',
+    description: 'A discovery platform for curated bookmarks, collections, and resources worth saving. Browse trusted tools, references, and links organized by collection.',
     columns: [
       {
-        title: 'Explore',
+        title: 'Collections',
         links: [
-          { label: 'Articles', href: '/articles' },
-          { label: 'Listings', href: '/listings' },
-          { label: 'Images', href: '/image-sharing' },
-          { label: 'PDF Library', href: '/pdf' },
+          { label: 'All resources', href: '/sbm' },
+          { label: 'Design tools', href: '/sbm?category=design' },
+          { label: 'Developer', href: '/sbm?category=developer' },
+          { label: 'Productivity', href: '/sbm?category=productivity' },
+          { label: 'Marketing', href: '/sbm?category=marketing' },
         ],
       },
       {
@@ -44,11 +46,11 @@ export const globalContent = {
     bottomNote: 'Built for clean discovery and connected publishing.',
   },
   commonLabels: {
-    readMore: 'Read more',
+    readMore: 'View resource',
     viewAll: 'View all',
-    explore: 'Explore',
+    explore: 'Browse',
     latest: 'Latest',
     related: 'Related',
-    published: 'Published',
+    published: 'Added',
   },
 } as const
