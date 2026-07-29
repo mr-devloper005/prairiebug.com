@@ -14,7 +14,7 @@ export function EditableFooter() {
 
   return (
     <footer className="bg-[var(--editable-footer-bg)] text-[var(--editable-footer-text)]">
-      <div className="mx-auto grid max-w-[var(--editable-container)] gap-12 px-5 py-16 sm:px-8 lg:grid-cols-[1.3fr_1fr_0.8fr_0.8fr] lg:px-[60px]">
+      <div className="mx-auto grid max-w-[var(--editable-container)] gap-12 px-5 py-16 sm:px-8 lg:grid-cols-[1.3fr_0.8fr] lg:px-[60px]">
         <div>
           <Link href="/" className="inline-flex items-center gap-3">
             <span className="flex h-10 w-10 items-center justify-center rounded-xl bg-white/10">
@@ -25,21 +25,8 @@ export function EditableFooter() {
           <p className="mt-5 max-w-sm text-sm leading-7 text-white/60">{globalContent.footer?.description || SITE_CONFIG.description}</p>
         </div>
 
-        <div>
-          <h3 className="text-xs font-semibold uppercase tracking-[0.14em] text-white/40">Collections</h3>
-          <div className="mt-4 grid gap-2.5">
-            {visibleTasks.length > 0 ? (
-              <Link href={visibleTasks[0].route} className="inline-flex items-center gap-2 text-sm font-medium text-white/70 transition hover:text-white">
-                All resources <ArrowUpRight className="h-3.5 w-3.5" />
-              </Link>
-            ) : null}
-            {globalContent.footer.columns[0]?.links.slice(1).map((link) => (
-              <Link key={link.href} href={link.href} className="inline-flex items-center gap-2 text-sm font-medium text-white/70 transition hover:text-white">
-                {link.label}
-              </Link>
-            ))}
-          </div>
-        </div>
+        
+      
 
         <div>
           <h3 className="text-xs font-semibold uppercase tracking-[0.14em] text-white/40">Site</h3>
