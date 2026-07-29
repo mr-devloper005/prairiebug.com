@@ -12,17 +12,20 @@ export async function generateMetadata(): Promise<Metadata> {
 export default function SignupPage() {
   return (
     <EditableSiteShell>
-      <main className="bg-[var(--slot4-panel-bg)] text-[var(--slot4-page-text)]">
-        <section className="mx-auto grid min-h-[calc(100vh-12rem)] max-w-[var(--editable-container)] items-center gap-12 px-4 py-16 sm:px-6 lg:grid-cols-[0.9fr_1fr] lg:px-8">
-          <div className="rounded-2xl border border-[var(--editable-border)] bg-[var(--slot4-surface-bg)] p-7 shadow-[0_4px_24px_rgba(0,0,0,0.08)] sm:p-9">
-            <h1 className="text-2xl font-bold tracking-[-0.01em]">{pagesContent.auth.signup.formTitle}</h1>
-            <EditableLocalSignupForm />
-            <p className="mt-6 text-sm text-[var(--slot4-muted-text)]">Already have an account? <Link href="/login" className="font-semibold text-[var(--slot4-accent)] underline-offset-4 hover:underline">{pagesContent.auth.signup.loginCta}</Link></p>
-          </div>
-          <div>
-            <p className="text-xs font-semibold uppercase tracking-[0.2em] text-[var(--slot4-accent)]">{pagesContent.auth.signup.badge}</p>
-            <h2 className="mt-4 max-w-xl text-4xl font-extrabold leading-[1.05] tracking-[-0.02em] sm:text-5xl">{pagesContent.auth.signup.title}</h2>
-            <p className="mt-5 max-w-lg text-base leading-7 text-[var(--slot4-muted-text)]">{pagesContent.auth.signup.description}</p>
+      <main>
+        <section className="relative overflow-hidden bg-[linear-gradient(135deg,#150f41,#2a1f6e_50%,#4760e6)]">
+          <div className="pointer-events-none absolute inset-0 bg-[radial-gradient(50%_80%_at_50%_100%,rgba(71,96,230,0.3),transparent)]" />
+          <div className="relative mx-auto grid min-h-[calc(100vh-12rem)] max-w-[var(--editable-container)] items-center gap-12 px-5 py-16 sm:px-8 lg:grid-cols-[1fr_1fr] lg:px-[60px]">
+            <div className="rounded-2xl border border-white/10 bg-white p-7 shadow-[0_16px_48px_rgba(21,15,65,0.25)] sm:p-9">
+              <h1 className="editable-display text-xl font-bold tracking-[-0.01em] text-[#150f41]">{pagesContent.auth.signup.formTitle}</h1>
+              <EditableLocalSignupForm />
+              <p className="mt-6 text-sm text-[var(--slot4-muted-text)]">Already have an account? <Link href="/login" className="font-semibold text-[#4760e6] underline-offset-4 hover:underline">{pagesContent.auth.signup.loginCta}</Link></p>
+            </div>
+            <div>
+              <p className="text-sm font-semibold uppercase tracking-[0.14em] text-white/60">{pagesContent.auth.signup.badge}</p>
+              <h2 className="editable-display mt-5 max-w-xl text-[40px] font-bold leading-[1.08] tracking-[-0.02em] text-white sm:text-5xl">{pagesContent.auth.signup.title}</h2>
+              <p className="mt-5 max-w-lg text-base leading-8 text-white/70">{pagesContent.auth.signup.description}</p>
+            </div>
           </div>
         </section>
       </main>
