@@ -363,16 +363,7 @@ function BookmarkDetail({ post, related }: { post: SitePost; related: SitePost[]
           {/* Sticky sidebar */}
           <aside className="space-y-6 lg:sticky lg:top-24 lg:self-start">
             {/* Resource card */}
-            <div className="rounded-2xl border border-[var(--tk-line)] bg-[var(--tk-surface)] p-6 shadow-[0_8px_32px_rgba(21,15,65,0.08)]">
-              <p className="text-xs font-medium uppercase tracking-[0.2em] text-[var(--tk-muted)]">Resource</p>
-              <h3 className="editable-display mt-3 text-lg font-semibold tracking-[-0.02em]">{post.title}</h3>
-              {website ? (
-                <Link href={website} target="_blank" rel="noreferrer" className="mt-5 inline-flex w-full items-center justify-center gap-2 rounded-xl bg-[var(--tk-accent)] px-5 py-3 text-sm font-semibold text-[var(--tk-on-accent)] transition hover:opacity-90">
-                  Visit resource <ExternalLink className="h-4 w-4" />
-                </Link>
-              ) : null}
-            </div>
-
+           
             {/* Trust panel */}
             <div className="rounded-2xl border border-[var(--tk-line)] bg-[var(--tk-surface)] p-6">
               <p className="text-xs font-medium uppercase tracking-[0.2em] text-[var(--tk-muted)]">Trust info</p>
